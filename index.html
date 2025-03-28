@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh;
             background: rgba(0, 0, 0, 0);
+            display: none; /* Initially hidden */
         }
         .menu-wrapper {
             display: flex;
@@ -144,6 +145,13 @@
                 } else if (event.data.direction === "down") {
                     updateMenuSelection(1);
                 }
+            }
+
+            // Show or hide the menu based on the event type
+            if (event.data.type === "show") {
+                document.body.style.display = 'flex'; // Show the menu
+            } else if (event.data.type === "hide") {
+                document.body.style.display = 'none'; // Hide the menu
             }
         });
     </script>
